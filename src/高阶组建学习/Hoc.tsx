@@ -6,16 +6,21 @@
 import React from "react";
 
 /**
- * 此处定义高阶段组建
+ * 此处定义高阶段组件,表示组件的入参必须是 大写
  * @param Component
  */
-const withSize = (component:React.Component) => {
-    return class toSize extends React.Component {
+const withLog = (Component: React.ComponentClass) => {//  泛型是否必须，依赖tsconfig中的配置
+    return class writeLog extends React.Component {
+        componentDidMount(): void {
+            console.log("组件名字", Component.name)
+        }
         render() {
-            return <Component/>    //todo   https://segmentfault.com/a/1190000019153177 学习 高阶组件
+            // todo Hoc 组件与普通组件通信
+            return <Component/>
         }
     }
-}
+};
+
 
 class Sub extends React.Component {
     render() {
@@ -23,10 +28,17 @@ class Sub extends React.Component {
     }
 }
 
-class Pub extends React.Component{
+class Pub extends React.Component {
     render() {
         return <button>我是Pub组建</button>;
     }
 }
 
-export {Sub, Pub};
+//高阶组件
+const WithLogSub = withLog(Sub);
+
+//高阶组件
+const WithLogPUb = withLog(Pub);
+
+
+export {WithLogSub, WithLogPUb};

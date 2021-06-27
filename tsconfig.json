@@ -18,8 +18,9 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
-    //"noImplicitAny": false // 不要显示的使用any类型
+    "jsx": "react-jsx",
+    // 不要显示的使用any类型:false
+    "noImplicitAny": false
   },
   "include": [
     "src"
