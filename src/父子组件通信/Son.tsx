@@ -23,7 +23,7 @@ const Son: React.FC<SonProps> = (x: SonProps) => {//x:SonProps 等价于{msg, ch
     );
 };
 
-
+//这里是一个类类型的用法{ new(): T; } 表示调用一个构造函数，返回类型T的实例
 function create<T>(c: { new(): T; } ): T {
     return new c();
 }
