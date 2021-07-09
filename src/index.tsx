@@ -15,7 +15,7 @@ ReactDOM.render(
     // <Provider value={'你好，这是来自index.tsx的信息'}>
     //
     // </Provider>
-    <Son msg={'index.tsx给的信息'}/>
+    <Son msg={'【跨组件通信，通过props一层层传递】'}/>
     ,
     document.getElementById('root')
 );
