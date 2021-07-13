@@ -19,7 +19,7 @@ const Main: React.FC<{ msg: string }> = (x: { msg: string }) => {
                 <div>
                     <ul>
                         <li><Link to="/home">首页</Link></li>
-                        <li><Link to="/other">其他页</Link></li>
+                        <li><Link to="/about">关于</Link></li>
                     </ul>
                     <Route path="/home" component={Home}/>
                     <Route path="/about" component={About}/>
