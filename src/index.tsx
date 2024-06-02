@@ -24,8 +24,8 @@ ReactDOM.render(
     // <Main msg={"我是msg(虽然里面不使用)"}/>
     // <ShowDate/>
     // <ProductList onDelete={(id:string)=>alert("删除行的id:"+id)} products={[{name:'商品名字1'},{name:'商品名字2'}]}/>
-    // <AntdMain/>
-    <FetchData/>
+     <AntdMain/>
+    // <FetchData/>
     ,
     document.getElementById('root')
 );

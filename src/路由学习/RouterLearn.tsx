@@ -13,6 +13,7 @@ const About: React.FC<{ msg: string }> = (x: { msg: string }) => {
 
 
 const Main: React.FC<{ msg: string }> = (x: { msg: string }) => {
+    console.log(x.msg);
     return (
         <Router>
             <>

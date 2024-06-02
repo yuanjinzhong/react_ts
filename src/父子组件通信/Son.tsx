@@ -17,7 +17,7 @@ const Son: React.FC<SonProps> = (x: SonProps) => {//x:SonProps 等价于{msg, ch
             <h4>我可以通过这个button修改父亲的名字:
                 <button onClick={() => {
                     x.changeFatherName("张三")
-                }}/>
+                }}>点击改父亲名字</button>
             </h4>
         </>
     );
