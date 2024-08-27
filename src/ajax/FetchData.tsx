@@ -5,7 +5,9 @@ const FetchData: React.FC = () => {
 
     const [content, setContent] = useState("");
 
+    // ajax请求应该放在useEffect里面执行，这个含义是组建渲染的副作用， 将组建渲染和副作用数据获取分开了
     useEffect(() => {
+        // 定义方法
         const fetchData = async () => {
             const result: AxiosResponse<any> = await axios.post("/api/user/order/confirm/order/aggregate", {
                 "app": "enterprise",
@@ -24,8 +26,8 @@ const FetchData: React.FC = () => {
             setContent(result.data);
             console.log(content);
         };
-        fetchData();
-    },[])
+        fetchData();// 执行方法
+    },[])// 这个是依赖数组，空依赖数组，表示只在组件挂载和卸载时执行， 依赖数组还可以写成[content],标识content值发生变化时，useEffect 会重新执行
 
 
     return (<>

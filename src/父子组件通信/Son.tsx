@@ -2,11 +2,12 @@ import React from 'react';
 
 interface SonProps {
     msg: string
-    children?: React.ReactNode // 这玩意等于vue的插槽。。。其实不需要显示的添加children属性，因为React.FC这个接口定义里面包含了children属性
+    //children?: React.ReactNode // 这玩意等于vue的插槽。。。其实不需要显示的添加children属性，因为React.FC这个接口定义里面包含了children属性
     changeFatherName(name: string): void //定义一个函数
 }
 
-const Son: React.FC<SonProps> = (x: SonProps) => {//x:SonProps 等价于{msg, children,changeFatherName} 解构
+const Son: React.FC<SonProps> = (x) => {//x:SonProps 等价于{msg, children,changeFatherName} 解构
+    //这里可以直接解构一个children属性，前提是定义函数组建的时候，lambda表达式里面不要指定类型为SonProps，这样的话默认类型是PropsWithChildren
     const {msg, children,changeFatherName} = x;//对象解构，如果使用TS,则意味着强类型，则意味着最好不要使用解构
     console.log(msg, children,changeFatherName)
     return (
